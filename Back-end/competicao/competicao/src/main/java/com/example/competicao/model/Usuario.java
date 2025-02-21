@@ -9,21 +9,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "tb_Usuario")
+@Table(name = "tb_Usuario") // Nome da tabela no banco de dados
 public class Usuario {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.IDENTITY) // ID auto-incrementado
   private Long id;
 
   @Column
   private String nickname;
 
-  @Column(unique = true, nullable = false)
+  @Column(unique = true, nullable = false) // Email único e obrigatório
   private String email;
 
   @Column
   private String senha;
-
 }
-
-
